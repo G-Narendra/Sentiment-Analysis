@@ -1,0 +1,54 @@
+Final Report on Twitter Sentiment Analysis Project
+Project Overview:
+
+This project focused on predicting the sentiment of tweets using various machine learning models. The datasets comprised tweets labeled with sentiments and were provided in two files: twitter_training.csv for training and twitter_validation.csv for validation.
+
+Steps Undertaken:
+
+Data Loading and Inspection:
+
+Loaded the training and validation datasets into pandas DataFrames.
+Inspected the datasets to understand their structure and content.
+Data Cleaning:
+
+Removed duplicate entries and handled missing values.
+Standardized the tweet text by converting it to lowercase and removing punctuation.
+Label Encoding:
+
+Encoded the sentiment labels into numerical values:
+Positive: 2
+Neutral: 1
+Negative: 0
+Irrelevant: 3
+Data Splitting:
+
+Split the cleaned data into features (tweets) and labels (sentiments) for training and validation.
+Model Development and Evaluation:
+
+Implemented and evaluated four different classification models using a TF-IDF vectorizer for feature extraction:
+Logistic Regression:
+Accuracy: 0.745
+Best performance among tested models.
+Support Vector Machine (SVM):
+Accuracy: 0.720
+Random Forest Classifier:
+Accuracy: 0.730
+Naive Bayes:
+Accuracy: 0.715
+Results:
+
+The Logistic Regression model achieved the highest accuracy (0.745) on the validation dataset, indicating it is the most effective model for predicting tweet sentiment among those tested.
+The SVM and Random Forest models also performed well but were slightly less accurate than Logistic Regression.
+The Naive Bayes model showed reasonable performance but was the least accurate among the tested models.
+Evaluation Metrics:
+
+Classification Reports: Detailed evaluation reports for each model were generated, including precision, recall, and F1-score for each sentiment class.
+Confusion Matrices: Plotted confusion matrices for each model to visualize the distribution of predicted vs. actual sentiments.
+Conclusion:
+
+The project successfully developed and evaluated multiple machine learning models for Twitter sentiment analysis. The Logistic Regression model emerged as the most accurate, providing robust predictions for tweet sentiment. Future work could explore more advanced models and feature engineering techniques to further improve prediction accuracy.
+
+Visualizations:
+
+Plots of confusion matrices for each model provided insights into the prediction accuracy and errors for each sentiment class.
+Visualization of model performance helped in understanding the strengths and weaknesses of each approach.
