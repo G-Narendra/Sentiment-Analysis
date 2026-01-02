@@ -1,94 +1,137 @@
-# **💬 Twitter Sentiment Analysis using Machine Learning**
+# 💬 Twitter Sentiment Analysis
+### Multi-Class Tweet Classification using Machine Learning
 
-*A machine learning-based approach to classify tweet sentiments.*
+<p align="center">
+<img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python">
+<img src="https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikitlearn">
+<img src="https://img.shields.io/badge/NLP-TF--IDF-8E44AD?style=for-the-badge">
+<img src="https://img.shields.io/badge/Best%20Accuracy-74.5%25-brightgreen?style=for-the-badge">
+<img src="https://img.shields.io/badge/Library-Pandas-150458?style=for-the-badge&logo=pandas">
+</p>
 
-## 🌟 **Overview**
-This project develops and evaluates **machine learning models** for **Twitter sentiment analysis**, categorizing tweets as **Positive, Neutral, Negative, or Irrelevant**. The dataset contains labeled tweets for training and validation.
+---
 
-## 📊 **Dataset Overview**
-- **Training Dataset:** `twitter_training.csv`
-- **Validation Dataset:** `twitter_validation.csv`
-- **Features:**
-  - **ID**: Unique identifier for each tweet
-  - **Topic**: The subject of the tweet (e.g., Facebook, Amazon)
-  - **Sentiment**: Labeled as **Positive (2), Neutral (1), Negative (0), or Irrelevant (3)**
-  - **Tweet Text**: The actual content of the tweet
+## 🌟 Overview
 
-## 🎯 **Project Workflow**
-✅ **Data Cleaning & Preprocessing** – Handling missing values, duplicate removal, and text normalization.  
-✅ **Feature Engineering** – Encoding sentiment labels and vectorizing text with **TF-IDF**.  
-✅ **Model Training & Evaluation** – Comparing multiple classification models.  
-✅ **Performance Visualization** – Confusion matrices and accuracy plots.  
-✅ **Best Model Selection** – Identifying the most accurate sentiment classifier.  
+This project explores the application of **Natural Language Processing (NLP)** and **Supervised Machine Learning** to categorize the emotional tone of Twitter data. By analyzing the linguistic patterns of tweets, the system classifies content into four distinct categories: **Positive, Neutral, Negative, or Irrelevant**.
 
-## 🛠️ **Tech Stack**
-🔹 **Programming Language:** Python  
-🔹 **Libraries:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn  
-🔹 **Model Type:** Classification (Logistic Regression, SVM, Random Forest, Naive Bayes)  
-🔹 **Development Environment:** Jupyter Notebook / Python Script  
 
-## 📂 **Project Structure**
-```
+
+---
+
+## 📊 Dataset Overview
+
+The analysis is performed on a comprehensive dataset consisting of labeled tweets mapped to specific topics (e.g., Facebook, Amazon, Microsoft).
+
+* **Training Data:** `twitter_training.csv`
+* **Validation Data:** `twitter_validation.csv`
+* **Labels:**
+    * **0:** Negative
+    * **1:** Neutral
+    * **2:** Positive
+    * **3:** Irrelevant
+
+---
+
+## 🎯 Project Workflow
+
+1.  **Data Cleaning & Preprocessing:** Handling null values, removing duplicates, and normalizing text (lowercasing, punctuation removal).
+2.  **Feature Engineering:** Utilizing **TF-IDF Vectorization** to convert raw text into numerical feature matrices.
+3.  **Model Training:** Evaluating four distinct classification architectures.
+4.  **Performance Visualization:** Generating **Confusion Matrices** and accuracy comparison plots.
+5.  **Selection:** Fine-tuning the best-performing model for final deployment.
+
+
+
+---
+
+## 🧠 Tech Stack
+
+| Category | Tools |
+| :--- | :--- |
+| **Language** | Python 3.8+ |
+| **Data Manipulation** | Pandas, NumPy |
+| **Machine Learning** | Scikit-learn |
+| **Visualization** | Matplotlib, Seaborn |
+| **NLP** | TF-IDF Vectorization |
+
+---
+
+## 📁 Project Structure
+
+```bash
 Sentiment-Analysis/
-├── sentiment.py               # Python script with model implementation
-├── twitter_training.csv       # Training dataset
-├── twitter_validation.csv     # Validation dataset
-├── sentiment_intro.txt        # Dataset overview
-├── sentiment_report.txt       # Detailed project report
-├── requirements.txt           # Dependencies for the project
-├── README.md                  # Project documentation
+├── src/
+│   └── sentiment.py         # Main ML implementation script
+├── twitter_training.csv     # Training dataset
+├── twitter_validation.csv   # Validation dataset
+├── reports/
+│   ├── sentiment_report.txt # Detailed performance analysis
+│   └── confusion_matrix.png # Visual evaluation
+├── requirements.txt         # Project dependencies
+└── README.md                # Project documentation
+
 ```
 
-## 🚀 **Installation & Setup**
-1️⃣ **Clone the Repository**  
-```sh
-git clone https://github.com/G-Narendra/Sentiment-Analysis.git
+
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone [https://github.com/G-Narendra/Sentiment-Analysis.git](https://github.com/G-Narendra/Sentiment-Analysis.git)
 cd Sentiment-Analysis
+
 ```
-2️⃣ **Install Dependencies**  
-```sh
+
+### 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
+
 ```
-3️⃣ **Run the Sentiment Analysis Model**  
-```sh
+
+### 3️⃣ Run the Analysis
+
+```bash
 python sentiment.py
+
 ```
 
-## 📉 **Model Performance & Evaluation**
-Four classification models were trained and evaluated:
+---
 
-| Model                 | Accuracy |
-|----------------------|----------|
-| **Logistic Regression** | **0.745** |
-| **Support Vector Machine (SVM)** | 0.720 |
-| **Random Forest Classifier** | 0.730 |
-| **Naive Bayes** | 0.715 |
+## 📉 Model Performance & Evaluation
 
-### **Best Performing Model: Logistic Regression**
-The **Logistic Regression** model outperformed others with **the highest accuracy (74.5%)**, making it the most effective for predicting tweet sentiment.
+We evaluated multiple algorithms to find the most robust classifier for short-form social media text:
 
-## 📊 **Evaluation Metrics & Visualization**
-- **Classification Reports** – Precision, recall, and F1-score analysis.
-- **Confusion Matrices** – Visualizing model performance across sentiment classes.
+| Model | Accuracy Score |
+| --- | --- |
+| **Logistic Regression** | **0.745 (74.5%)** |
+| **Random Forest Classifier** | 0.730 (73.0%) |
+| **Support Vector Machine (SVM)** | 0.720 (72.0%) |
+| **Naive Bayes** | 0.715 (71.5%) |
 
-## 💡 **Conclusion**
-This project successfully developed **machine learning models** for **Twitter sentiment analysis**. The **Logistic Regression model** achieved the highest accuracy. Future improvements could involve:
-- **Using deep learning models (LSTMs, Transformers) for better text understanding**.
-- **Applying advanced NLP techniques like Word2Vec and BERT embeddings**.
+### **🏆 Champion Model: Logistic Regression**
 
-## 🤝 **Contributions**
-💡 Open to improvements! Feel free to:
-1. Fork the repo  
-2. Create a new branch (`feature-branch`)  
-3. Make changes & submit a PR  
+The **Logistic Regression** model achieved the highest accuracy, demonstrating superior capability in handling high-dimensional TF-IDF sparse matrices for sentiment tasks.
 
+---
 
+## 🚀 Future Roadmap
 
-## 📩 **Connect with Me**
-📧 **Email:** [narendragandikota2540@gmail.com](mailto:narendragandikota2540@gmail.com)  
-🌐 **Portfolio:** [G-Narendra Portfolio](https://g-narendra-portfolio.vercel.app/)  
-💼 **LinkedIn:** [G-Narendra](https://linkedin.com/in/g-narendra/)  
-👨‍💻 **GitHub:** [G-Narendra](https://github.com/G-Narendra)  
+* [ ] **Deep Learning:** Implementing LSTMs or GRUs to capture sequential dependencies in text.
+* [ ] **Transformer Models:** Integrating **BERT** or **RoBERTa** for context-aware embeddings.
+* [ ] **Real-time Pipeline:** Connecting to the Twitter (X) API for live sentiment tracking.
 
-⭐ **If you find this project useful, drop a star!** 🚀
+---
 
+## 👨‍💻 Author
+
+**Narendra (G‑Narendra)** AI | ML | Python | Full Stack | GenAI Enthusiast
+
+📧 [Email Me](mailto:narendragandikota2540@gmail.com) | 💼 [LinkedIn](https://linkedin.com/in/g-narendra/) | 👨‍💻 [GitHub](https://github.com/G-Narendra)
+
+---
+
+<p align="center">⭐ If you find this project helpful, please give it a star! 🚀</p>
