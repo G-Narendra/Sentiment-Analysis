@@ -126,6 +126,15 @@ The **Logistic Regression** model achieved the highest accuracy, demonstrating s
 
 ---
 
+## Engineering Decisions & Challenges Solved
+
+| Challenge | Decision | Why |
+|---|---|---|
+| Text data is high-dimensional and sparse | TF-IDF vectorization with max features limit | Bag-of-words produces 10K+ features from a small dataset — TF-IDF with max features reduces dimensionality while preserving signal |
+| Negative sentiment is harder to detect than positive | Class-weighted model + precision/recall reporting | "Not good" vs "good" — negation flips sentiment; class weighting ensures the model learns to detect both |
+| Simple vs complex model trade-off | Compare Naive Bayes, Logistic Regression, SVM | For small datasets, simple models often outperform complex ones — comparison justifies the choice |
+| Model needs to work on unseen text | Hold-out test set evaluation with classification report | A model that performs well on training but fails on new text is useless — test set simulates real deployment |
+
 ## 👨‍💻 Author
 
 **Narendra (G‑Narendra)** AI | ML | Python | Full Stack | GenAI Enthusiast
